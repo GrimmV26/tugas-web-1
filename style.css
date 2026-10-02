@@ -143,7 +143,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(18, 19, 21, 0.9) 0%, rgba(24, 25, 27, 0.35) 45%, #262729 100%), url('foto/hero-bg.jpg');
+    background: linear-gradient(to bottom, rgba(18, 19, 21, 0.9) 0%, rgba(24, 25, 27, 0.35) 45%, #262729 100%), url('img/hero-bg.jpg');
     background-size: cover;
     background-position: center 25%;
     filter: blur(2.5px);
