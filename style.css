@@ -1,31 +1,31 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
 
-html{
+html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
 }
 
-body{
+body {
     background-color: #262729;
     color: white;
 }
 
-h2{
+h2 {
     font-size: 2em;
 }
 
-section{
+section {
     text-align: center;
 }
 
 
 /* header + nav */
-header{
+header {
     position: fixed;
     top: 0;
     left: 0;
@@ -41,13 +41,13 @@ header{
     transform: translateZ(0);
 }
 
-.nav-container{
+.nav-container {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.logo-text{
+.logo-text {
     color: whitesmoke;
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
@@ -55,7 +55,7 @@ header{
     letter-spacing: 1px;
 }
 
-.search-btn{
+.search-btn {
     background-color: black;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 4px;
@@ -68,7 +68,7 @@ header{
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.game-nav{
+.game-nav {
     display: flex;
     padding: 0;
     background-color: rgba(38, 39, 41, 0.45);
@@ -79,7 +79,7 @@ header{
     overflow: hidden;
 }
 
-.game-nav a{
+.game-nav a {
     color: #8c8c8c;
     text-decoration: none;
     padding: 10px 25px;
@@ -89,23 +89,23 @@ header{
     transition: background-color 0.2s, color 0.2s;
 }
 
-.game-nav a:last-child{
+.game-nav a:last-child {
     border-right: none;
 }
 
-.game-nav a.active{
+.game-nav a.active {
     background-color: #e5e5e5;
     color: #111;
 }
 
-.game-nav a:hover:not(.active){
+.game-nav a:hover:not(.active) {
     background-color: #353639;
     color: #ddd;
 }
 
 
 /* hero */
-.hero{
+.hero {
     min-height: 100vh;
     height: 100vh;
     display: flex;
@@ -118,7 +118,7 @@ header{
     padding: 100px 20px 60px;
 }
 
-.hero::before{
+.hero::before {
     content: '';
     position: absolute;
     top: 0;
@@ -137,7 +137,7 @@ header{
     -webkit-backface-visibility: hidden;
 }
 
-.hero-wrapper{
+.hero-wrapper {
     position: relative;
     z-index: 1;
     display: flex;
@@ -151,45 +151,45 @@ header{
     gap: 160px;
 }
 
-.hero-text{
+.hero-text {
     flex: 0 0 auto;
     text-align: left;
     max-width: 500px;
 }
 
-.hero-text h1{
+.hero-text h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
     text-align: left;
     font-size: 4.5em;
     letter-spacing: 2px;
     color: white;
-    text-shadow: 0 0 20px rgba(255,255,255,0.7), 0 0 40px rgba(255,255,255,0.4);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 40px rgba(255, 255, 255, 0.4);
     margin: 0 0 12px 0;
     line-height: 1.1;
 }
 
-.hero-text h2{
+.hero-text h2 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     text-align: left;
     font-size: 1.8em;
     color: #f0f0f0;
-    text-shadow: 0 0 15px rgba(255,255,255,0.6), 0 0 25px rgba(255,255,255,0.3);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 25px rgba(255, 255, 255, 0.3);
     margin: 0 0 15px 0;
     line-height: 1.3;
 }
 
-.hero-text p{
+.hero-text p {
     font-size: 1.15em;
     text-align: left;
-    color: rgba(255,255,255,0.8);
-    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     margin: 0;
 }
 
 /* nyoba 3d stack modal css tanpa js */
-.hero-3d-stack{
+.hero-3d-stack {
     flex: 1;
     display: flex;
     align-items: center;
@@ -198,7 +198,7 @@ header{
     padding: 20px 20px 20px 0;
 }
 
-.stack-card{
+.stack-card {
     position: relative;
     width: 370px;
     height: 410px;
@@ -209,14 +209,14 @@ header{
     box-shadow: 18px 25px 45px rgba(0, 0, 0, 0.88), -2px 0 10px rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.15);
     transform-origin: center center;
-    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), 
-                box-shadow 0.3s ease, 
-                filter 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 0.3s ease,
+        filter 0.3s ease;
     will-change: transform;
     cursor: pointer;
 }
 
-.stack-card img{
+.stack-card img {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -225,57 +225,59 @@ header{
     pointer-events: none;
 }
 
-.stack-card.card-1{
+.stack-card.card-1 {
     z-index: 4;
     transform: perspective(1000px) rotateY(24deg) scale(1);
 }
 
-.stack-card.card-2{
+.stack-card.card-2 {
     z-index: 3;
     margin-left: -270px;
     transform: perspective(1000px) rotateY(24deg) scale(0.96);
     filter: brightness(0.92);
 }
 
-.stack-card.card-3{
+.stack-card.card-3 {
     z-index: 2;
     margin-left: -270px;
     transform: perspective(1000px) rotateY(24deg) scale(0.92);
     filter: brightness(0.85);
 }
 
-.stack-card.card-4{
+.stack-card.card-4 {
     z-index: 1;
     margin-left: -270px;
     transform: perspective(1000px) rotateY(24deg) scale(0.88);
     filter: brightness(0.78);
 }
 
-.stack-card:hover{
+.stack-card:hover {
     z-index: 50 !important;
     transform: perspective(1000px) rotateY(24deg) translateY(-26px) scale(1.02) !important;
     filter: brightness(1.18) !important;
     box-shadow: 25px 35px 60px rgba(0, 0, 0, 0.95), 0 0 20px rgba(255, 255, 255, 0.25) !important;
 }
 
-@media (max-width: 992px){
-    .hero-wrapper{
+@media (max-width: 992px) {
+    .hero-wrapper {
         flex-direction: column;
         text-align: center;
         gap: 30px;
         padding-top: 40px;
     }
 
-    .hero-text{
+    .hero-text {
         text-align: center;
         max-width: 100%;
     }
 
-    .hero-text h1, .hero-text h2, .hero-text p{
+    .hero-text h1,
+    .hero-text h2,
+    .hero-text p {
         text-align: center;
     }
 
-    .hero-3d-stack{
+    .hero-3d-stack {
         height: auto;
         padding: 0;
     }
@@ -284,7 +286,7 @@ header{
 
 
 /* About */
-#About{
+#About {
     background-color: #262729;
     color: white;
     height: 40vh;
@@ -296,13 +298,13 @@ header{
     padding: 60px 10%;
 }
 
-#About p{
+#About p {
     font-size: large;
     width: 80%;
     margin-top: 30px;
 }
 
-.about-logo{
+.about-logo {
     width: 200px;
     height: 200px;
     object-fit: contain;
@@ -311,14 +313,14 @@ header{
     filter: brightness(1.2);
 }
 
-.about-text{
+.about-text {
     flex: 1;
     text-align: left;
 }
 
 
 /* Game sama komedi putar */
-#Game{
+#Game {
     background: linear-gradient(to bottom, #262729, black);
     color: white;
     display: flex;
@@ -330,7 +332,7 @@ header{
     overflow-x: hidden;
 }
 
-#Game h2{
+#Game h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 2.3em;
     font-weight: 800;
@@ -340,14 +342,14 @@ header{
     color: white;
 }
 
-.carousel-wrapper{
+.carousel-wrapper {
     width: 100%;
     overflow: hidden;
     position: relative;
     padding: 0;
 }
 
-.carousel-divider{
+.carousel-divider {
     width: 90%;
     margin: 5px auto;
     border: none;
@@ -355,7 +357,7 @@ header{
     border-radius: 2px;
 }
 
-.card-container{
+.card-container {
     display: flex;
     flex-direction: row;
     width: max-content;
@@ -366,24 +368,25 @@ header{
     -webkit-backface-visibility: hidden;
 }
 
-.card-container:has(.card:hover){
+.card-container:has(.card:hover) {
     animation-play-state: paused;
 }
 
-.card-container.reverse{
+.card-container.reverse {
     animation-direction: reverse;
 }
 
-@keyframes scroll{
-    0%{
+@keyframes scroll {
+    0% {
         transform: translateX(0);
     }
-    100%{
+
+    100% {
         transform: translateX(-25%);
     }
 }
 
-.card{
+.card {
     position: relative;
     margin: 20px;
     padding: 0;
@@ -397,12 +400,12 @@ header{
     transition: transform 0.3s ease;
 }
 
-.card.landscape{
+.card.landscape {
     width: 480px;
     height: 270px;
 }
 
-.card-img{
+.card-img {
     position: absolute;
     top: 0;
     left: 0;
@@ -414,21 +417,21 @@ header{
     z-index: 1;
 }
 
-.card-overlay{
+.card-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 60%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 60%);
     z-index: 2;
 }
 
-.card:hover{
+.card:hover {
     transform: scale(1.05);
 }
 
-.card-content{
+.card-content {
     position: relative;
     z-index: 3;
     padding: 30px 20px;
@@ -436,7 +439,7 @@ header{
     font-family: 'Montserrat', sans-serif;
 }
 
-.card-content h3{
+.card-content h3 {
     font-size: 1.4em;
     font-weight: 800;
     color: white;
@@ -446,7 +449,8 @@ header{
     letter-spacing: 1px;
 }
 
-.card-content p, .card-content a{
+.card-content p,
+.card-content a {
     font-size: 0.9em;
     font-weight: 600;
     color: white;
@@ -455,12 +459,13 @@ header{
     margin: 0;
 }
 
-.card:hover .card-content p, .card:hover .card-content a{
+.card:hover .card-content p,
+.card:hover .card-content a {
     color: #e5c07b;
 }
 
 /* kontak */
-#Contact{
+#Contact {
     display: flex;
     padding: 40px 20px;
     justify-content: center;
@@ -468,23 +473,23 @@ header{
     background-color: #000;
 }
 
-#Contact p{
+#Contact p {
     text-align: center;
     margin-top: 10px;
 }
 
-#Contact p a{
+#Contact p a {
     text-decoration: none;
     color: whitesmoke;
 }
 
-#Contact p a:hover{
+#Contact p a:hover {
     color: plum;
 }
 
 
 /* Buat Footer */
-footer{
+footer {
     background: #111;
     color: whitesmoke;
     display: flex;
@@ -495,11 +500,11 @@ footer{
     font-size: 0.9em;
 }
 
-footer p{
+footer p {
     margin: 0;
 }
 
-#disclaimer{
+#disclaimer {
     position: absolute;
     right: 30px;
     color: #8c8c8c;
@@ -508,14 +513,14 @@ footer p{
     margin: 0;
 }
 
-@media (max-width: 650px){
-    footer{
+@media (max-width: 650px) {
+    footer {
         flex-direction: column;
         gap: 8px;
         text-align: center;
     }
 
-    #disclaimer{
+    #disclaimer {
         position: static;
         text-align: center;
     }
