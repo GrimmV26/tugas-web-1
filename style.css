@@ -262,36 +262,12 @@ header {
     box-shadow: 25px 35px 60px rgba(0, 0, 0, 0.95), 0 0 20px rgba(255, 255, 255, 0.25) !important;
 }
 
-@media (max-width: 992px) {
-    .hero-wrapper {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-        padding-top: 40px;
-    }
-
-    .hero-text {
-        text-align: center;
-        max-width: 100%;
-    }
-
-    .hero-text h1,
-    .hero-text h2,
-    .hero-text p {
-        text-align: center;
-    }
-
-    .hero-3d-stack {
-        height: auto;
-        padding: 0;
-    }
-}
-
 /* About */
 #About {
     background-color: #262729;
     color: white;
-    height: 40vh;
+    min-height: 40vh;
+    height: auto;
     display: flex;
     flex-direction: row;
     text-align: justify;
@@ -518,7 +494,156 @@ footer p {
     margin: 0;
 }
 
-@media (max-width: 650px) {
+/* ==========================================================================
+   RESPONSIVE (MOBILE & TABLET)
+   ========================================================================== */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 15px;
+        justify-content: center;
+    }
+
+    .logo-text {
+        display: none;
+    }
+
+    .nav-container {
+        width: 100%;
+        max-width: 400px;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .search-btn {
+        width: 38px;
+        height: 38px;
+        flex-shrink: 0;
+    }
+
+    .game-nav {
+        flex: 1;
+        display: flex;
+    }
+
+    .game-nav a {
+        flex: 1;
+        text-align: center;
+        padding: 8px 6px;
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 85px 15px 40px;
+        height: auto;
+        min-height: 100vh;
+        justify-content: center;
+    }
+
+    .hero-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+        padding: 0;
+        width: 100%;
+    }
+
+    .hero-text {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .hero-text h1 {
+        font-size: 2.4em;
+        margin-bottom: 6px;
+        line-height: 1.15;
+    }
+
+    .hero-text h2 {
+        font-size: 1.15em;
+        margin-bottom: 8px;
+        line-height: 1.3;
+    }
+
+    .hero-text p {
+        font-size: 0.95em;
+    }
+
+    .hero-3d-stack {
+        height: 250px;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .stack-card {
+        width: 175px;
+        height: 194px;
+        box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.9);
+    }
+
+    .stack-card.card-2,
+    .stack-card.card-3,
+    .stack-card.card-4 {
+        margin-left: -130px;
+    }
+
+    #About {
+        height: auto !important;
+        min-height: auto !important;
+        flex-direction: column !important;
+        padding: 60px 20px !important;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .about-logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 130px;
+        height: 130px;
+    }
+
+    .about-text {
+        text-align: center;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .about-text h2 {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+    }
+
+    #About p {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+        font-size: 0.95em;
+        line-height: 1.6;
+    }
+
+    #Game {
+        padding: 60px 0;
+    }
+
+    #Game h2 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+
+    .card {
+        width: 300px;
+        height: 335px;
+        margin: 10px;
+    }
+
+    .card.landscape {
+        width: 320px;
+        height: 180px;
+    }
+
     footer {
         flex-direction: column;
         gap: 8px;
