@@ -1,12 +1,21 @@
+/* ==========================================================================
+   GLOBAL STYLES & RESETS
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: sans-serif;
 }
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 70px;
+    scroll-padding-top: 80px;
+}
+
+body {
+    background-color: #262729;
+    color: white;
 }
 
 body p {
@@ -17,18 +26,35 @@ body h2 {
     margin-right: 20px;
 }
 
+h2 {
+    font-size: 2em;
+}
+
+section {
+    text-align: center;
+    flex-direction: column;
+    padding: 20vh;
+    align-items: center;
+}
+
+
+/* ==========================================================================
+   HEADER & NAVIGATION
+   ========================================================================== */
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(24, 25, 27, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     padding: 15px 30px;
     font-family: sans-serif;
     z-index: 100;
+    background: linear-gradient(to bottom, rgba(18, 19, 21, 0.95) 0%, rgba(18, 19, 21, 0.5) 60%, transparent 100%);
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .nav-container {
@@ -49,8 +75,8 @@ header {
     background-color: black;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    width: 28px;
-    height: 28px;
+    width: 42px;
+    height: 42px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,11 +84,12 @@ header {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-
 .game-nav {
     display: flex;
     padding: 0;
-    background-color: #262729;
+    background-color: rgba(38, 39, 41, 0.45);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 4px;
     overflow: hidden;
@@ -92,24 +119,190 @@ header {
     color: #ddd;
 }
 
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
 .hero {
-    height: 50vh;
+    min-height: 100vh;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     text-align: center;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom, whitesmoke, #262729);
+    position: relative;
+    overflow: hidden;
+    padding: 100px 20px 60px;
 }
 
-.hero h1 {
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(18, 19, 21, 0.9) 0%, rgba(24, 25, 27, 0.35) 45%, #262729 100%), url('foto/hero-bg.jpg');
+    background-size: cover;
+    background-position: center 25%;
+    filter: blur(2.5px);
+    -webkit-filter: blur(2.5px);
+    z-index: 0;
+    transform: translate3d(0, 0, 0) scale(1.1);
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.hero-wrapper {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 60px;
+    gap: 160px;
+}
+
+.hero-text {
+    flex: 0 0 auto;
     text-align: left;
-    font-size: 3em;
+    max-width: 500px;
 }
 
-h2 {
-    font-size: 2em;
+.hero-text h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    text-align: left;
+    font-size: 4.5em;
+    letter-spacing: 2px;
+    color: white;
+    text-shadow: 0 0 20px rgba(255,255,255,0.7), 0 0 40px rgba(255,255,255,0.4);
+    margin: 0 0 12px 0;
+    line-height: 1.1;
 }
 
+.hero-text h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-align: left;
+    font-size: 1.8em;
+    color: #f0f0f0;
+    text-shadow: 0 0 15px rgba(255,255,255,0.6), 0 0 25px rgba(255,255,255,0.3);
+    margin: 0 0 15px 0;
+    line-height: 1.3;
+}
+
+.hero-text p {
+    font-size: 1.15em;
+    text-align: left;
+    color: rgba(255,255,255,0.8);
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    margin: 0;
+}
+
+/* 3D Stack of Cards (Pure CSS) */
+.hero-3d-stack {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 520px;
+    padding: 20px 20px 20px 0;
+}
+
+.stack-card {
+    position: relative;
+    width: 370px;
+    height: 410px;
+    aspect-ratio: 428 / 474;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 18px 25px 45px rgba(0, 0, 0, 0.88), -2px 0 10px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transform-origin: center center;
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                box-shadow 0.3s ease, 
+                filter 0.3s ease;
+    will-change: transform;
+    cursor: pointer;
+}
+
+.stack-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #111;
+    display: block;
+    pointer-events: none;
+}
+
+.stack-card.card-1 {
+    z-index: 4;
+    transform: perspective(1000px) rotateY(24deg) scale(1);
+}
+
+.stack-card.card-2 {
+    z-index: 3;
+    margin-left: -270px;
+    transform: perspective(1000px) rotateY(24deg) scale(0.96);
+    filter: brightness(0.92);
+}
+
+.stack-card.card-3 {
+    z-index: 2;
+    margin-left: -270px;
+    transform: perspective(1000px) rotateY(24deg) scale(0.92);
+    filter: brightness(0.85);
+}
+
+.stack-card.card-4 {
+    z-index: 1;
+    margin-left: -270px;
+    transform: perspective(1000px) rotateY(24deg) scale(0.88);
+    filter: brightness(0.78);
+}
+
+.stack-card:hover {
+    z-index: 50 !important;
+    transform: perspective(1000px) rotateY(24deg) translateY(-26px) scale(1.02) !important;
+    filter: brightness(1.18) !important;
+    box-shadow: 25px 35px 60px rgba(0, 0, 0, 0.95), 0 0 20px rgba(255, 255, 255, 0.25) !important;
+}
+
+@media (max-width: 992px) {
+    .hero-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        padding-top: 40px;
+    }
+
+    .hero-text {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .hero-text h1, .hero-text h2, .hero-text p {
+        text-align: center;
+    }
+
+    .hero-3d-stack {
+        height: auto;
+        padding: 0;
+    }
+}
+
+
+/* ==========================================================================
+   HOME & ABOUT SECTIONS
+   ========================================================================== */
 #Home {
     background-color: #262729;
     color: white;
@@ -152,9 +345,11 @@ h2 {
     color: white;
     height: 40vh;
     display: flex;
+    flex-direction: row;
     text-align: justify;
     justify-content: center;
     align-items: center;
+    padding: 60px 10%;
 }
 
 #About p {
@@ -163,19 +358,87 @@ h2 {
     margin-top: 30px;
 }
 
-section {
-    text-align: center;
-    flex-direction: column;
-    padding: 20vh;
+.about-logo {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-right: 50px;
+    flex-shrink: 0;
+    filter: brightness(1.2);
+}
+
+.about-text {
+    flex: 1;
+    text-align: left;
+}
+
+
+/* ==========================================================================
+   GAME SECTION & CAROUSEL
+   ========================================================================== */
+#Game {
+    background: linear-gradient(to bottom, #262729, black);
+    color: white;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#Game h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.3em;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 55px;
+    margin-right: 0;
+    color: white;
+}
+
+.carousel-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+}
+
+.carousel-divider {
+    width: 90%;
+    margin: 5px auto;
+    border: none;
+    border-top: 2px solid #4a4c50; /* abu-abu sedikit lebih terang dari background cover */
+    border-radius: 2px;
 }
 
 .card-container {
-    margin-top: 20px;
-    margin-right: 20px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    width: max-content;
+    animation: scroll 15s linear infinite;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.card-container:has(.card:hover) {
+    animation-play-state: paused;
+}
+
+.card-container.reverse {
+    animation-direction: reverse;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-25%); /* Geser sejauh 1 set dari total 4 set agar looping seamless */
+    }
 }
 
 .card {
@@ -189,6 +452,12 @@ section {
     height: 473px;
     overflow: hidden;
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card.landscape {
+    width: 480px;
+    height: 270px;
 }
 
 .card-img {
@@ -213,8 +482,8 @@ section {
     z-index: 2;
 }
 
-.card:hover .card-img {
-    transform: scale(1.08);
+.card:hover {
+    transform: scale(1.05);
 }
 
 .card-content {
@@ -248,13 +517,10 @@ section {
     color: #e5c07b;
 }
 
-footer {
-    background: #111;
-    color: whitesmoke;
-    justify-content: space-between;
-    padding: 10px;
-}
 
+/* ==========================================================================
+   CONTACT SECTION
+   ========================================================================== */
 #Contact {
     display: flex;
     padding: 40px 20px;
@@ -273,16 +539,47 @@ footer {
     color: whitesmoke;
 }
 
-
 #Contact p a:hover {
     color: plum;
 }
 
-#Game {
-    background: linear-gradient(to bottom, #262729, black);
-    color: white;
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer {
+    background: #111;
+    color: whitesmoke;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
+    padding: 18px 30px;
+    position: relative;
+    font-size: 0.9em;
 }
 
+footer p {
+    margin: 0;
+}
+
+#disclaimer {
+    position: absolute;
+    right: 30px;
+    color: #8c8c8c;
+    font-size: 0.85em;
+    font-style: italic;
+    margin: 0;
+}
+
+@media (max-width: 650px) {
+    footer {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    #disclaimer {
+        position: static;
+        text-align: center;
+    }
+}
