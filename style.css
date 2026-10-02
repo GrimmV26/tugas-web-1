@@ -13,6 +13,7 @@ html {
 body {
     background-color: #262729;
     color: white;
+    overflow-x: hidden;
 }
 
 h2 {
@@ -151,8 +152,8 @@ header {
     width: 100%;
     max-width: 1500px;
     margin: 0 auto;
-    padding: 0 60px;
-    gap: 160px;
+    padding: 0 clamp(20px, 4vw, 60px);
+    gap: clamp(30px, 5vw, 140px);
 }
 
 .hero-text {
@@ -494,10 +495,128 @@ footer p {
     margin: 0;
 }
 
-/* ==========================================================================
-   RESPONSIVE (MOBILE & TABLET)
-   ========================================================================== */
-@media (max-width: 768px) {
+/* Responsif tablet */
+@media (max-width: 1024px) {
+    header {
+        padding: 12px 25px;
+    }
+
+    .hero {
+        padding: 100px 20px 50px;
+        height: auto;
+        min-height: 100vh;
+        justify-content: center;
+    }
+
+    .hero-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: clamp(25px, 4vw, 40px);
+        padding: 0;
+        width: 100%;
+        max-width: 720px;
+    }
+
+    .hero-text {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(2.3em, 5vw, 3.4em);
+        line-height: 1.15;
+        margin-bottom: 8px;
+    }
+
+    .hero-text h2 {
+        font-size: clamp(1.15em, 2.5vw, 1.5em);
+        margin-bottom: 12px;
+        line-height: 1.3;
+    }
+
+    .hero-text p {
+        font-size: clamp(0.95em, 1.8vw, 1.1em);
+    }
+
+    .hero-3d-stack {
+        height: clamp(240px, 35vw, 320px);
+        width: 100%;
+        max-width: 480px;
+        margin: 0 auto;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .stack-card {
+        width: 210px;
+        height: 233px;
+        box-shadow: 12px 18px 35px rgba(0, 0, 0, 0.9);
+    }
+
+    .stack-card.card-2,
+    .stack-card.card-3,
+    .stack-card.card-4 {
+        margin-left: -150px;
+    }
+
+    #About {
+        height: auto !important;
+        min-height: auto !important;
+        flex-direction: column !important;
+        padding: clamp(45px, 7vw, 65px) 25px !important;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .about-logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: clamp(120px, 16vw, 150px);
+        height: clamp(120px, 16vw, 150px);
+    }
+
+    .about-text {
+        text-align: center;
+        width: 100%;
+        max-width: 650px;
+    }
+
+    .about-text h2 {
+        font-size: clamp(1.7em, 3.5vw, 2em);
+        margin-bottom: 10px;
+    }
+
+    #About p {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+        font-size: clamp(0.92em, 1.6vw, 1.05em);
+        line-height: 1.65;
+    }
+
+    #Game {
+        padding: 55px 0;
+    }
+
+    #Game h2 {
+        font-size: clamp(1.7em, 3.5vw, 2.1em);
+        margin-bottom: 30px;
+    }
+
+    .card {
+        width: clamp(270px, 32vw, 320px);
+        height: clamp(302px, 36vw, 358px);
+        margin: 12px;
+    }
+
+    .card.landscape {
+        width: clamp(290px, 36vw, 350px);
+        height: clamp(163px, 20vw, 197px);
+    }
+}
+
+/* Responsif mobile */
+@media (max-width: 600px) {
     header {
         padding: 10px 15px;
         justify-content: center;
@@ -533,117 +652,21 @@ footer p {
     }
 
     .hero {
-        padding: 85px 15px 40px;
-        height: auto;
-        min-height: 100vh;
-        justify-content: center;
-    }
-
-    .hero-wrapper {
-        flex-direction: column;
-        text-align: center;
-        gap: 25px;
-        padding: 0;
-        width: 100%;
-    }
-
-    .hero-text {
-        text-align: center;
-        max-width: 100%;
-    }
-
-    .hero-text h1 {
-        font-size: 2.4em;
-        margin-bottom: 6px;
-        line-height: 1.15;
-    }
-
-    .hero-text h2 {
-        font-size: 1.15em;
-        margin-bottom: 8px;
-        line-height: 1.3;
-    }
-
-    .hero-text p {
-        font-size: 0.95em;
-    }
-
-    .hero-3d-stack {
-        height: 250px;
-        width: 100%;
-        max-width: 320px;
-        margin: 0 auto;
-        padding: 0;
-        justify-content: center;
+        padding-top: 85px;
     }
 
     .stack-card {
-        width: 175px;
-        height: 194px;
-        box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.9);
+        width: 170px;
+        height: 188px;
     }
 
     .stack-card.card-2,
     .stack-card.card-3,
     .stack-card.card-4 {
-        margin-left: -130px;
+        margin-left: -125px;
     }
 
-    #About {
-        height: auto !important;
-        min-height: auto !important;
-        flex-direction: column !important;
-        padding: 60px 20px !important;
-        text-align: center;
-        gap: 20px;
-    }
-
-    .about-logo {
-        margin-right: 0;
-        margin-bottom: 10px;
-        width: 130px;
-        height: 130px;
-    }
-
-    .about-text {
-        text-align: center;
-        width: 100%;
-        max-width: 500px;
-    }
-
-    .about-text h2 {
-        font-size: 1.8em;
-        margin-bottom: 10px;
-    }
-
-    #About p {
-        width: 100%;
-        text-align: center;
-        margin-top: 10px;
-        font-size: 0.95em;
-        line-height: 1.6;
-    }
-
-    #Game {
-        padding: 60px 0;
-    }
-
-    #Game h2 {
-        font-size: 1.8em;
-        margin-bottom: 30px;
-    }
-
-    .card {
-        width: 300px;
-        height: 335px;
-        margin: 10px;
-    }
-
-    .card.landscape {
-        width: 320px;
-        height: 180px;
-    }
-
+    footer
     footer {
         flex-direction: column;
         gap: 8px;
