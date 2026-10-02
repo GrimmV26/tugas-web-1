@@ -15,23 +15,16 @@ body {
     color: white;
 }
 
-body p {
-    margin-right: 20px;
-}
-
-body h2 {
-    margin-right: 20px;
-}
-
 h2 {
     font-size: 2em;
 }
 
 section {
     text-align: center;
+    display: flex;
     flex-direction: column;
-    padding: 20vh;
     align-items: center;
+    width: 100%;
 }
 
 
@@ -333,6 +326,7 @@ header {
     background: linear-gradient(to bottom, #262729, black);
     color: white;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding-left: 0;
@@ -476,10 +470,12 @@ header {
 /* kontak */
 #Contact {
     display: flex;
-    padding: 40px 20px;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
     justify-content: center;
     color: whitesmoke;
-    background: linear-gradient(to top, black);
+    background-color: #000;
 }
 
 #Contact p {
