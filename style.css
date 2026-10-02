@@ -278,8 +278,7 @@ footer {
     color: plum;
 }
 
-#Project {
-    /* background-color: #1e012f; */
+#Game {
     background: linear-gradient(to bottom, #262729, black);
     color: white;
     display: flex;
